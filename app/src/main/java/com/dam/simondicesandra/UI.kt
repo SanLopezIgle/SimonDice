@@ -48,7 +48,13 @@ fun Botonera(miViewModel: VM) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-
+        Text(
+            text = if (miViewModel.getEstadoJuego() == EstadoJuego.FINALIZANDO) "Perdiste!" else "",
+            modifier = Modifier
+                .offset(x = 110.dp)
+                .offset(y = 420.dp),
+            color = Color.Red
+        )
         Text(
             text = "Ronda: ${miViewModel.getRonda()}", modifier = Modifier
                 .offset(y = 380.dp)

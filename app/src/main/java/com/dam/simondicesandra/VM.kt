@@ -21,7 +21,6 @@ class VM : ViewModel(){
             Log.d("corutina", "Listo en el ViewModel!!!")//Manda un mensaje al logcat
             //ESto lo voy a hacer cuando el usuario pulse un boton
         }
-
     }
 
     /**
@@ -81,9 +80,14 @@ class VM : ViewModel(){
         return (0..maximo-1).random()
     }
 
+
+    /*
+
+    */
     /**
      * Muestra la secuencia de colores al usuario
      */
+
     fun mostrarSecuencia() {
         viewModelScope.launch {
             for (color in Datos.secuencia) {//Estás recorriendo cada elemento en la lista Datos.secuencia, y en cada iteración, color toma el valor de uno de los elementos de la lista.
@@ -130,6 +134,10 @@ class VM : ViewModel(){
                 Log.d(TAG, "Incorrecto")
             }
         }
+    }
+
+    fun getEstadoJuego(): EstadoJuego {
+        return Datos.estadoJuego
     }
 
     /**
